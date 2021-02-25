@@ -1,0 +1,37 @@
+include ../assets/pug/_head
+include ../assets/pug/_body
+include ../assets/pug/_scripts
+
+- grade = 'º'
+- title = ''
+- subtitle = ''
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+
+    body
+        #app.container.my-5.animate__animated.animate__fadeIn.animate__delay-1s
+            h1
+                span.grade #{grade}
+                | #{title}
+            if subtitle.length>1
+                h2 #{subtitle}
+
+            +body(3000)
+        +scripts
+            script.
+
+                app.$set(app, 'scenes', [
+                    {
+                        instruction: '',
+                        popper: '',
+                        type: 'choose', 
+                        pregunta: '',
+                        opcionesImgsPrefix: null,
+                        opciones: [''],
+                        respuestaNum: 
+                    },
+                    
+                ])
