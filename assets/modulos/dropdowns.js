@@ -40,12 +40,12 @@ Vue.component('dropdowns', {
                 let op = this.options[i]
                 if(op.options){
                     if(op.answer == this.answers[i]){
-                        console.log('OKAY', op.answer, this.answers[i])
+                        //console.log('OKAY', op.answer, this.answers[i])
                     } else {
-                        console.log('ERRORW', op.answer, this.answers[i])
+                        //console.log('ERRORW', op.answer, this.answers[i])
                         this.result = false
                     }
-                    console.log(op.answer)
+                    //console.log(op.answer)
                 }
             }
 

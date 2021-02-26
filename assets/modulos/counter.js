@@ -64,11 +64,11 @@ Vue.component('counter', {
             this.startSeconds = this.segundos
         }
         
-        /*
+        /* 
         if(window.location.hostname=='mbpro.local'){
             this.startApp()
         }
-        */
+ */
 
     },
     template: `

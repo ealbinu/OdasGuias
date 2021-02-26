@@ -1,35 +1,28 @@
 
 mixin body(segundos)
+    
+    // Navigation >>>>>>>>>>>>>>>
+    template(v-if="currentScene != (scenes.length+1)")
+        navigation(key="nav1" v-if="started && resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @back="currentScene = Math.floor((currentScene-1)/10)*10" @next="currentScene = (currentScene+10 > scenes.length) ? (scenes.length+1) : ( Math.floor((currentScene+10)/10)*10) " @goto="currentScene = $event" :answereds="r")
+    
+    
     // SCENES ############################################
-    .scene(v-for="(i, index) in scenes" v-show="currentScene == index && started" :class="'scene_'+index")
+    .scene(v-for="(i, index) in scenes" v-show="index >= currentScene && index < currentScene + 10 && started" :class="'scene_'+index")
         
-        .row.mt-3.pregunta
-            choose(:key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+i.texto" :options="i.opciones"  :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings")
-        
-        //.row
-            .col.mt-2.instruccion(v-if="i.instruction" v-html="i.instruction")
-            .col-md-4.text-center(v-if="i.popper"): popper: div(v-html="i.popper")
-        // Pregunta >>>>>>>>>>>>>>>>>
-            // >>>> CHOOSE
-            //template(v-if="i.type=='choose'")
-                choose(:key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta" :options="buildOpImgs(i.opciones, i.opcionesImgsPrefix, i.settings)"  :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings")
-            
-            // >>>> SELECTABLEOPTIONS
-            //template(v-else-if="i.type=='selectableoptions'")
-                selectableoptions(:key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res = false" :num="(index+1)+'.'" :text="i.pregunta" :options="i.opciones" :answer="i.respuestaNum" :customclass="i.settings.class" :isactive="currentScene == index")
-                    template(v-slot:option="{option}") {{option.o}}
+        .row.mt-3.pregunta(:id="'scene_'+index")
+            choose(@choosed="storeScreencapture(index)" :key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+(i.texto?i.texto:'')" :options="i.opciones"  :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings")
 
             if block
                 block
     // SCENES FINALIZAR ############################################
-    .scene(v-if="currentScene == scenes.length").lastscene
+    .scene(v-if="currentScene == (scenes.length+1)").lastscene
         template(v-if="stillMissing && !resultado")
             .falta Te falta contestar las siguientes preguntas:
-            navigation(v-if="started && resultado==false" :current-scene="currentScene" :scenes="scenes" @back="currentScene -= 1" @next="currentScene += 1" @goto="currentScene = $event" :answereds="r" :onlypages="true")
+            navigation(key="nav2" v-if="started && resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @goto="currentScene = $event" :answereds="r" :onlypages="true")
         finalize(@evaluate="finalizar" @reset="reset" :resultado="resultado" :right="right" :total="total" @goback="currentScene -= 1")
     // TEST SCREENSHOTS ####
     // .row: .col-3(v-for="(i, index) in screen"): img(:src="i").w-100
     // Counter >>>>>>>>>>
-    counter(@started="started=true" @ended="finalizar" :resultado="resultado" :current-time="currentTime" @settime="currentTime=$event" :right="right" :total="total" :segundos=segundos)
+    counter(@started="started=true" @ended="finalizar" :resultado="resultado" :current-time="currentTime" @settime="currentTime=$event" :right="right" :total="total" :segundos="automaticSeconds")
     // Navigation >>>>>>>>>>>>>>>
-    navigation(v-if="started && resultado==false" :current-scene="currentScene" :scenes="scenes" @back="currentScene -= 1" @next="currentScene += 1" @goto="currentScene = $event" :answereds="r")
+    navigation(key="nav3" v-if="started && resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @back="currentScene = Math.floor((currentScene-1)/10)*10" @next="currentScene = (currentScene+10 > scenes.length) ? (scenes.length+1) : ( Math.floor((currentScene+10)/10)*10) " @goto="currentScene = $event" :answereds="r")

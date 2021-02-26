@@ -12,45 +12,33 @@
     <style></style>
   </head>
   <body>
-    <div class="container my-5 animate__animated animate__fadeIn animate__delay-1s" id="app">
+    <div class="container animate__animated animate__fadeIn animate__delay-1s mt-5" id="app">
       <h1>Dominio I</h1>
+      <!-- Navigation >>>>>>>>>>>>>>>-->
+      <template v-if="currentScene != (scenes.length+1)">
+        <navigation key="nav1" v-if="started &amp;&amp; resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @back="currentScene = Math.floor((currentScene-1)/10)*10" @next="currentScene = (currentScene+10 &gt; scenes.length) ? (scenes.length+1) : ( Math.floor((currentScene+10)/10)*10) " @goto="currentScene = $event" :answereds="r"></navigation>
+      </template>
       <!-- SCENES ############################################-->
-      <div class="scene" v-for="(i, index) in scenes" v-show="currentScene == index &amp;&amp; started" :class="'scene_'+index">
-        <div class="row mt-3 pregunta">
-          <choose :key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+i.texto" :options="i.opciones" :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings"></choose>
+      <div class="scene" v-for="(i, index) in scenes" v-show="index &gt;= currentScene &amp;&amp; index &lt; currentScene + 10 &amp;&amp; started" :class="'scene_'+index">
+        <div class="row mt-3 pregunta" :id="'scene_'+index">
+          <choose @choosed="storeScreencapture(index)" :key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+(i.texto?i.texto:'')" :options="i.opciones" :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings"></choose>
         </div>
-        <!--.row
-        .col.mt-2.instruccion(v-if="i.instruction" v-html="i.instruction")
-        .col-md-4.text-center(v-if="i.popper"): popper: div(v-html="i.popper")
-        -->
-        <!-- Pregunta >>>>>>>>>>>>>>>>>
-        // >>>> CHOOSE
-        //template(v-if="i.type=='choose'")
-            choose(:key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta" :options="buildOpImgs(i.opciones, i.opcionesImgsPrefix, i.settings)"  :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings")
-        
-        // >>>> SELECTABLEOPTIONS
-        //template(v-else-if="i.type=='selectableoptions'")
-            selectableoptions(:key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res = false" :num="(index+1)+'.'" :text="i.pregunta" :options="i.opciones" :answer="i.respuestaNum" :customclass="i.settings.class" :isactive="currentScene == index")
-                template(v-slot:option="{option}") {{option.o}}
-        
-        if block
-            block
-        -->
       </div>
       <!-- SCENES FINALIZAR ############################################-->
-      <div class="scene lastscene" v-if="currentScene == scenes.length">
+      <div class="scene lastscene" v-if="currentScene == (scenes.length+1)">
         <template v-if="stillMissing &amp;&amp; !resultado">
           <div class="falta">Te falta contestar las siguientes preguntas:</div>
-          <navigation v-if="started &amp;&amp; resultado==false" :current-scene="currentScene" :scenes="scenes" @back="currentScene -= 1" @next="currentScene += 1" @goto="currentScene = $event" :answereds="r" :onlypages="true"></navigation>
+          <navigation key="nav2" v-if="started &amp;&amp; resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @goto="currentScene = $event" :answereds="r" :onlypages="true"></navigation>
         </template>
         <finalize @evaluate="finalizar" @reset="reset" :resultado="resultado" :right="right" :total="total" @goback="currentScene -= 1"></finalize>
       </div>
       <!-- TEST SCREENSHOTS ####-->
       <!-- .row: .col-3(v-for="(i, index) in screen"): img(:src="i").w-100-->
       <!-- Counter >>>>>>>>>>-->
-      <counter @started="started=true" @ended="finalizar" :resultado="resultado" :current-time="currentTime" @settime="currentTime=$event" :right="right" :total="total" :segundos="3600"></counter>
+      <counter @started="started=true" @ended="finalizar" :resultado="resultado" :current-time="currentTime" @settime="currentTime=$event" :right="right" :total="total" :segundos="automaticSeconds"></counter>
       <!-- Navigation >>>>>>>>>>>>>>>-->
-      <navigation v-if="started &amp;&amp; resultado==false" :current-scene="currentScene" :scenes="scenes" @back="currentScene -= 1" @next="currentScene += 1" @goto="currentScene = $event" :answereds="r"></navigation>
+      <navigation key="nav3" v-if="started &amp;&amp; resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @back="currentScene = Math.floor((currentScene-1)/10)*10" @next="currentScene = (currentScene+10 &gt; scenes.length) ? (scenes.length+1) : ( Math.floor((currentScene+10)/10)*10) " @goto="currentScene = $event" :answereds="r"></navigation>
+      <!--img(v-for="(i, index) in screen" :src="i")-->
     </div>
     <script src="q.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -72,49 +60,6 @@
     <script src="../../assets/modulos/counter.js?v=7"></script>
     <script src="../../assets/modulos/utils.js?v=7"></script>
     <script src="../../assets/assets.js?v=7"></script>
-    <script>
-      app.$set(app, 'scenes', questions )
-      /*
-      app.$set(app, 'scenes', [
-          {
-              instruction: 'Selecciona la respuesta correcta.',
-              popper: '',
-              type: 'choose', 
-              pregunta: 'Son los dos puntos que señala el artículo 2 de la Declaración Universal de Derechos Humanos.',
-              opcionesImgsPrefix: null,
-              opciones: ['90º','240º','180º','360º'],
-              respuestaNum: 2
-          },
-          {
-              instruction: '',
-              popper: '',
-              type: 'choose', 
-              pregunta: 'Son los grados que mide la apertura de las manecillas del reloj. <img src="aimg/2.png" class="img-fluid">',
-              opcionesImgsPrefix: null,
-              opciones: ['180º','150º','130º','120º'],
-              respuestaNum: 1
-          },
-          {
-              instruction: '',
-              popper: '',
-              type: 'choose', 
-              pregunta: '¿Cuántos grados mide el ángulo marcado en la circunferencia? <img src="aimg/3.png" class="img-fluid">',
-              opcionesImgsPrefix: null,
-              opciones: ['30º','25º','35º','45º'],
-              respuestaNum: 3
-          },
-          {
-              instruction: '',
-              popper: '',
-              type: 'choose', 
-              pregunta: '¿Cuál es la figura que tiene mayor superficie? <img src="aimg/4.png" class="img-fluid">',
-              opcionesImgsPrefix: null,
-              opciones: ['2','3','4','1'],
-              respuestaNum: 0
-          },
-          
-      ])
-      */
-    </script>
+    <script></script>
   </body>
 </html>

@@ -18,8 +18,10 @@ var app = new Vue({
             right: 0,
             total: 0,
             resultado: false,
-            scenes: {},
+            scenes: questions,
             currentScene:0,
+            scenesby10: 0,
+            automaticSeconds: 3600,
             temps: {},
             unanswered:0,
             finalData:{
@@ -184,7 +186,7 @@ var app = new Vue({
                         //console.log(d,data[d], typeof data[d], 'number')
                         if(data[d] >= 0){
                             this.r[d] = data[d]
-                        } else { 
+                        } else {
                             this.r[d] = undefined
                         }
                     }
@@ -239,16 +241,17 @@ var app = new Vue({
                 }
             }
         },
-        storeScreencapture () {
+        storeScreencapture (clickedscene) {
+            var _this = this
+            let sceneNum = clickedscene ? clickedscene : _this.currentScene
             if(!this.started){
                 return false
             }
-            var _this = this
             var node = document.body
-            var node = document.getElementsByClassName('scene')[this.currentScene]
+            var node = document.getElementById('scene_'+sceneNum)
             domtoimage.toPng(node).then(function (dataUrl) {
-                _this.screen[_this.currentScene] = null
-                _this.screen[_this.currentScene] = dataUrl
+                _this.screen[sceneNum] = null
+                _this.screen[sceneNum] = dataUrl
             }).catch(function (error) { console.error(error) })
             
         }
@@ -257,8 +260,16 @@ var app = new Vue({
         this.hashScorreAndContinue()
         /* Screen capture */
         this.loadScreencap()
+        this.scenesby10 = Math.floor(this.scenes.length/10)
 
-        
+    },
+    created () {
+        this.automaticSeconds = this.scenes.length * 90
+        if((this.automaticSeconds/60) % 1 != 0){
+            this.automaticSeconds+=30
+        }
+
+        this.scenesby10 = Math.floor(this.scenes.length/10)
     }
 })
 

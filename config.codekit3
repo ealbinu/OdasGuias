@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "26667",
 "files": {
+	"\/.gitattributes": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/.gitattributes",
+		"oF": 0
+		},
 	"\/assets\/aimg\/bullet.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -270,6 +277,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/assets\/font\/specimen_files\/grid_12-825-55-15-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/font\/specimen_files\/specimen_stylesheet-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/font\/specimen_files\/specimen_stylesheet-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -716,7 +733,7 @@
 		"oA": 0,
 		"oAP": "\/DIRI\/aimg\/Captura de Pantalla 2021-01-04 a la(s) 17.17.09.png",
 		"oF": 0,
-		"oIPL": 0,
+		"oIPL": 1,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
@@ -736,6 +753,13 @@
 		"oAP": "\/DIRI\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/DIRI\/preguntas.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/DIRI\/preguntas.txt",
+		"oF": 0
 		},
 	"\/DIRI\/q.js": {
 		"ft": 64,

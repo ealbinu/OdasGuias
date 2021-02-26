@@ -11,55 +11,18 @@ html(lang="es")
         style.
 
     body
-        #app.container.my-5.animate__animated.animate__fadeIn.animate__delay-1s
+        #app.container.animate__animated.animate__fadeIn.animate__delay-1s.mt-5
             h1 #{title}
             if subtitle.length>1
                 h2 #{subtitle}
 
             +body(3600)
         
+            //img(v-for="(i, index) in screen" :src="i")
+
+
         script(src="q.js")
         +scripts
             script.
-                app.$set(app, 'scenes', questions )
-                /*
-                app.$set(app, 'scenes', [
-                    {
-                        instruction: 'Selecciona la respuesta correcta.',
-                        popper: '',
-                        type: 'choose', 
-                        pregunta: 'Son los dos puntos que señala el artículo 2 de la Declaración Universal de Derechos Humanos.',
-                        opcionesImgsPrefix: null,
-                        opciones: ['90º','240º','180º','360º'],
-                        respuestaNum: 2
-                    },
-                    {
-                        instruction: '',
-                        popper: '',
-                        type: 'choose', 
-                        pregunta: 'Son los grados que mide la apertura de las manecillas del reloj. <img src="aimg/2.png" class="img-fluid">',
-                        opcionesImgsPrefix: null,
-                        opciones: ['180º','150º','130º','120º'],
-                        respuestaNum: 1
-                    },
-                    {
-                        instruction: '',
-                        popper: '',
-                        type: 'choose', 
-                        pregunta: '¿Cuántos grados mide el ángulo marcado en la circunferencia? <img src="aimg/3.png" class="img-fluid">',
-                        opcionesImgsPrefix: null,
-                        opciones: ['30º','25º','35º','45º'],
-                        respuestaNum: 3
-                    },
-                    {
-                        instruction: '',
-                        popper: '',
-                        type: 'choose', 
-                        pregunta: '¿Cuál es la figura que tiene mayor superficie? <img src="aimg/4.png" class="img-fluid">',
-                        opcionesImgsPrefix: null,
-                        opciones: ['2','3','4','1'],
-                        respuestaNum: 0
-                    },
-                    
-                ])
-                */
+
+               

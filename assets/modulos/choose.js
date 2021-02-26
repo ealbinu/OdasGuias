@@ -38,6 +38,10 @@ Vue.component('choose', {
                 /* SINGLE */ // ############################ 
                 this.status = op
                 this.$emit('input', this.status)
+                var _this = this
+                setTimeout(function () {
+                    _this.$emit('choosed')
+                },100)
                 if(this.status!=null) {
                     //s_ok.play()
                 }
@@ -101,8 +105,8 @@ Vue.component('choose', {
             <div class="options">
                 <template v-if="multiple==false">
                     <template v-for="(op, index) in options" v-if="multiple==false">  
-                        <div @click="clicked(index)" v-if="status!=index" v-html="op" :class="isactive ? 'animate__animated animate__bounce animate__fast':''"></div>
-                        <div @click="clicked(index)" v-if="status==index" class="active animate__animated animate__rubberBand" v-html="op"></div>
+                        <div @click="clicked(index)" v-if="status!=index" v-html="op+'<span class=fixline>.</span>'" :class="isactive ? 'animate__animated animate__bounce animate__fast':''"></div>
+                        <div @click="clicked(index)" v-if="status==index" class="active animate__animated animate__rubberBand" v-html="op+'<span class=fixline>.</span>'"></div>
                     </template>
                 </template>
                 <template v-if="multiple==true">
