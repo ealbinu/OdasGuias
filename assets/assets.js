@@ -1,9 +1,9 @@
 /* AUDIOS */
-var s_end = new Howl({ src: ['../../assets/asound/end.mp3'] });
-var s_error = new Howl({ src: ['../../assets/asound/error.mp3'] });
-var s_ok = new Howl({ src: ['../../assets/asound/ok.mp3'] });
-var s_select = new Howl({ src: ['../../assets/asound/select.mp3'] });
-var s_win = new Howl({ src: ['../../assets/asound/win.mp3'] });
+var s_end = new Howl({ src: ['../assets/asound/end.mp3'] });
+var s_error = new Howl({ src: ['../assets/asound/error.mp3'] });
+var s_ok = new Howl({ src: ['../assets/asound/ok.mp3'] });
+var s_select = new Howl({ src: ['../assets/asound/select.mp3'] });
+var s_win = new Howl({ src: ['../assets/asound/win.mp3'] });
 
 var counterRef = 0
 
@@ -176,14 +176,15 @@ var app = new Vue({
 
                 let data = JSON.parse(hash[1])
 
-                //console.log('CARGADO:',data)
+
+                console.log('CARGADO:',data)
 
 
                 /* set data */
                 for(d in data){
                     //NUMERICO
                     if(typeof data[d] == 'number'){
-                        //console.log(d,data[d], typeof data[d], 'number')
+                        console.log(d,data[d], typeof data[d], 'number')
                         if(data[d] >= 0){
                             this.r[d] = data[d]
                         } else {
@@ -228,6 +229,7 @@ var app = new Vue({
                     if(breakHash[bh].includes('#d')){
                         let setData = breakHash[bh].replace('#d', '')
                         this.loadDataAndContinue(setData)
+
                     }
                 }
             } else {

@@ -11,6 +11,11 @@ Vue.component('choose', {
             multipleAnswers: [],
         }
     },
+    watch: {
+        value (old, nu) {
+            this.status = this.value
+        }
+    },
     computed:{
         setclass () {
             if(this.evaluate) {
@@ -80,7 +85,8 @@ Vue.component('choose', {
         }
     },
     mounted () {
-        this.$emit('input', null)
+        //this.$emit('input', null)
+        
         if(this.value !== null){
             this.status = this.value
             this.$emit('input', this.status)

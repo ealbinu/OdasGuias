@@ -19,7 +19,7 @@ mixin body(segundos)
         template(v-if="stillMissing && !resultado")
             .falta Te falta contestar las siguientes preguntas:
             navigation(key="nav2" v-if="started && resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @goto="currentScene = $event" :answereds="r" :onlypages="true")
-        finalize(@evaluate="finalizar" @reset="reset" :resultado="resultado" :right="right" :total="total" @goback="currentScene -= 1")
+        finalize(@evaluate="finalizar" @reset="reset" :resultado="resultado" :right="right" :total="total" @goback="currentScene = 0")
     // TEST SCREENSHOTS ####
     // .row: .col-3(v-for="(i, index) in screen"): img(:src="i").w-100
     // Counter >>>>>>>>>>

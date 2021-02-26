@@ -86,7 +86,7 @@ Vue.component('counter', {
             <!--
             <p><small>Podrás cambiar de pregunta utilizando los botones <strong>Anterior</strong> y <strong>Siguiente</strong> o dando clic en los botones numéricos que se encuentran en la parte inferior.</small></p>
             -->
-            <p><small>Cambia de pregunta presionando <strong>Anterior</strong> y <strong>Siguiente</strong> o dando click en el número de pregunta.</small></p>
+            <p><small>Cambia de bloque presionando <strong>Anterior</strong> y <strong>Siguiente</strong> o dando click en el número de bloque.</small></p>
             <div class="row navigation  text-center">
                 <div class="col paginas">
                     <div class="pagina">1</div><div class="pagina">2</div><div class="pagina">3</div><div class="pagina">4</div>
@@ -115,8 +115,8 @@ Vue.component('counter', {
             <button @click="verification = true">Comenzar</button>
             </template>
             <template v-if="verification">
-                <p><strong>¿Deseas comenzar la Dominio?</strong></p>
-                <p>Tendrás <strong>{{startSeconds/60}} minutos</strong> para completarla.</p>    
+                <p><strong>¿Deseas comenzar el Dominio?</strong></p>
+                <p>Tendrás <strong>{{startSeconds/60}} minutos</strong> para completarlo.</p>    
                 <button @click="startApp">Comenzar</button>
                 <button class="cancelar" @click="verification=false">Regresar</button>
             </template>

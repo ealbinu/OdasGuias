@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../assets/font/stylesheet.css?v=7"/>
-    <link rel="stylesheet" href="../../assets/assets.css?v=7"/>
+    <link rel="stylesheet" href="../assets/font/stylesheet.css?v=7"/>
+    <link rel="stylesheet" href="../assets/assets.css?v=7"/>
     <style></style>
   </head>
   <body>
@@ -30,7 +30,7 @@
           <div class="falta">Te falta contestar las siguientes preguntas:</div>
           <navigation key="nav2" v-if="started &amp;&amp; resultado==false" :current-scene="currentScene" :scenes="scenesby10" :totalscenes="scenes" @goto="currentScene = $event" :answereds="r" :onlypages="true"></navigation>
         </template>
-        <finalize @evaluate="finalizar" @reset="reset" :resultado="resultado" :right="right" :total="total" @goback="currentScene -= 1"></finalize>
+        <finalize @evaluate="finalizar" @reset="reset" :resultado="resultado" :right="right" :total="total" @goback="currentScene = 0"></finalize>
       </div>
       <!-- TEST SCREENSHOTS ####-->
       <!-- .row: .col-3(v-for="(i, index) in screen"): img(:src="i").w-100-->
@@ -47,19 +47,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
-    <script src="../../assets/modulos/dragdropMod.js"></script>
-    <script src="../../assets/modulos/dropdowns.js"></script>
-    <script src="../../assets/modulos/selectable.js"></script>
-    <script src="../../assets/modulos/selectableoptions.js"></script>
-    <script src="../../assets/modulos/check.js"></script>
-    <script src="../../assets/modulos/inputbox.js"></script>
-    <script src="../../assets/modulos/choose.js"></script>
-    <script src="../../assets/modulos/popper.js"></script>
-    <script src="../../assets/modulos/relational.js"></script>
-    <script src="../../assets/modulos/finalize.js?v=7"></script>
-    <script src="../../assets/modulos/counter.js?v=7"></script>
-    <script src="../../assets/modulos/utils.js?v=7"></script>
-    <script src="../../assets/assets.js?v=7"></script>
+    <script src="../assets/modulos/dragdropMod.js"></script>
+    <script src="../assets/modulos/dropdowns.js"></script>
+    <script src="../assets/modulos/selectable.js"></script>
+    <script src="../assets/modulos/selectableoptions.js"></script>
+    <script src="../assets/modulos/check.js"></script>
+    <script src="../assets/modulos/inputbox.js"></script>
+    <script src="../assets/modulos/choose.js"></script>
+    <script src="../assets/modulos/popper.js"></script>
+    <script src="../assets/modulos/relational.js"></script>
+    <script src="../assets/modulos/finalize.js?v=7"></script>
+    <script src="../assets/modulos/counter.js?v=7"></script>
+    <script src="../assets/modulos/utils.js?v=7"></script>
+    <script src="../assets/assets.js?v=7"></script>
     <script></script>
   </body>
 </html>

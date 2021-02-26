@@ -87,7 +87,7 @@ Vue.component('relational', {
     template: `
         <div class="relational d-flex justify-content-between">
             <div class="relationalStart" @click="startConnections()" v-if="!started">
-                <img src="../../assets/aimg/relational.svg">
+                <img src="../assets/aimg/relational.svg">
             </div>
             
             <div class="sources">
