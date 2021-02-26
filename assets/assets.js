@@ -175,16 +175,14 @@ var app = new Vue({
                 /* Answers */
 
                 let data = JSON.parse(hash[1])
-
-
-                console.log('CARGADO:',data)
+                //console.log('CARGADO:',data)
 
 
                 /* set data */
                 for(d in data){
                     //NUMERICO
                     if(typeof data[d] == 'number'){
-                        console.log(d,data[d], typeof data[d], 'number')
+                        //console.log(d,data[d], typeof data[d], 'number')
                         if(data[d] >= 0){
                             this.r[d] = data[d]
                         } else {
