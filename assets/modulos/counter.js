@@ -82,7 +82,7 @@ Vue.component('counter', {
         </div>
         <div class="counterRun" v-if="!started && currentTime==0">
             <template v-if="!verification">
-            <p>Tendrás <strong>{{startSeconds/60}} minutos</strong> para completar la guía a partir de que des clic en el botón "comenzar".</p>
+            <p>Tendrás <strong>{{startSeconds/60}} minutos</strong> para completar el Dominio a partir de que des clic en el botón "comenzar".</p>
             <!--
             <p><small>Podrás cambiar de pregunta utilizando los botones <strong>Anterior</strong> y <strong>Siguiente</strong> o dando clic en los botones numéricos que se encuentran en la parte inferior.</small></p>
             -->
@@ -115,21 +115,21 @@ Vue.component('counter', {
             <button @click="verification = true">Comenzar</button>
             </template>
             <template v-if="verification">
-                <p><strong>¿Deseas comenzar la guía?</strong></p>
+                <p><strong>¿Deseas comenzar la Dominio?</strong></p>
                 <p>Tendrás <strong>{{startSeconds/60}} minutos</strong> para completarla.</p>    
                 <button @click="startApp">Comenzar</button>
                 <button class="cancelar" @click="verification=false">Regresar</button>
             </template>
         </div>
         <div class="counterRun" v-if="!started && currentTime!=0">
-            <p>¡Continúa con tu guía!</p>
+            <p>¡Continúa con tu Dominio!</p>
             <p>Aún tienes un tiempo restante de <strong>{{clockview}}</strong> minutos.</p>
             <p><strong>¡Éxito!</strong></p>
             <button @click="startApp">Continuar</button>
         </div>
         <div class="counterRun endtime" v-if="percentage==100">
             <p><strong>Tu tiempo se terminó.</strong></p>
-            <p>Se ha entregado tu guía con las respuestas que llevabas hasta el momento.</p>
+            <p>Se ha entregado tu Dominio con las respuestas que llevabas hasta el momento.</p>
             <div class="d-flex justify-content-center mt-5 resultado" v-if="resultado">
                 <h3>Resultado</h3>
                 <div><strong>{{right}} respuesta<span v-if="right>1 || right==0">s</span> correcta<span v-if="right>1 || right==0">s</span> </strong> de {{total}} preguntas</div>
