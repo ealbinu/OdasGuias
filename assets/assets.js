@@ -43,6 +43,10 @@ var app = new Vue({
         }
     },
     watch: {
+        currentScene() {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
+        },
         currentTime(ov, nv){
             let segundos = 60 - (nv % 60)
             if(segundos == 1){ this.buildStoreCall();  }
@@ -78,6 +82,10 @@ var app = new Vue({
                 }
                 return imgs3
             }
+        },
+        saveAndContinueLater(){
+            console.log('Saved')
+            this.buildStoreCall()
         },
         buildStoreCall () {
             if(!this.started){

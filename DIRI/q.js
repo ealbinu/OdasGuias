@@ -13,7 +13,7 @@ var questions = [
   },
   {
     pregunta:
-      "El artículo 11 de la Declaración Universal de Derechos Humanos dice: “Nadie será condenado por actos u omisiones que en el momento de cometerse no fueron _____________ según el derecho nacional o internacional”.",
+      "El artículo 11 de la Declaración Universal de Derechos Humanos dice: “Nadie será condenado por actos u omisiones que en el momento de cometerse no fueron ____________ según el derecho nacional o internacional”.",
 
     opciones: ["graves ", "vistos", "severos", "delictivos"],
     respuestaNum: 0,
@@ -50,7 +50,7 @@ var questions = [
   },
   {
     pregunta:
-      "Se proclama la Declaración Universal de Derechos Humanos como ideal común por el que todos los pueblos y naciones deben esforzase, a fin de que tanto los individuos como las instituciones, promuevan, mediante _____________, el respeto a estos derechos y libertades, y aseguren, por medidas progresivas de carácter nacional e internacional, su reconocimiento y aplicación universales y efectivos.",
+      "Se proclama la Declaración Universal de Derechos Humanos como ideal común por el que todos los pueblos y naciones deben esforzase, a fin de que tanto los individuos como las instituciones, promuevan, mediante ____________, el respeto a estos derechos y libertades, y aseguren, por medidas progresivas de carácter nacional e internacional, su reconocimiento y aplicación universales y efectivos.",
 
     opciones: [
       "la tolerancia y planeación ",
@@ -184,7 +184,7 @@ var questions = [
   },
   {
     pregunta:
-      "Según el texto Hacia una mejor calidad de nuestras escuelas, una vez identificado un problema, se debe _____________ para poder cuantificarlo y dimensionarlo.",
+      "Según el texto Hacia una mejor calidad de nuestras escuelas, una vez identificado un problema, se debe ____________ para poder cuantificarlo y dimensionarlo.",
 
     opciones: [
       "consensar sobre sus posibles causas ",
@@ -208,7 +208,7 @@ var questions = [
   },
   {
     pregunta:
-      "De acuerdo con la UNESCO, la _____________ aspira a hacer efectivo para toda la población el derecho a una educación de calidad, preocupándose especialmente de aquellos que, por diferentes causas, están excluidos o en riesgo de ser marginados. Por discapacidad, por género, por culturas o etnias, por pobreza, por ser migrantes o portadores de VIH, entre otros.",
+      "De acuerdo con la UNESCO, la ____________ aspira a hacer efectivo para toda la población el derecho a una educación de calidad, preocupándose especialmente de aquellos que, por diferentes causas, están excluidos o en riesgo de ser marginados. Por discapacidad, por género, por culturas o etnias, por pobreza, por ser migrantes o portadores de VIH, entre otros.",
 
     opciones: ["integración ", "igualdad", "unificación", "inclusión"],
     respuestaNum: 0,
@@ -594,7 +594,7 @@ var questions = [
 
   {
     pregunta:
-      "Cuando un profesor o autoridad educativa se entere de que un estudiante es víctima de violencia escolar y que la agresión se deriva de la conducta de un trabajador de la institución educativa, que pueda poner en riesgo grave, la integridad física, psicológica o sexual de los alumnos, se tomarán las medidas pertinentes, evitando los prejuicios sobre la falsedad o la veracidad de los hechos de la queja, evitando que el trabajador involucrado, _______________________ sin agraviar los derechos del trabajador hasta el momento de la comprobación de los hechos.",
+      "Cuando un profesor o autoridad educativa se entere de que un estudiante es víctima de violencia escolar y que la agresión se deriva de la conducta de un trabajador de la institución educativa, que pueda poner en riesgo grave, la integridad física, psicológica o sexual de los alumnos, se tomarán las medidas pertinentes, evitando los prejuicios sobre la falsedad o la veracidad de los hechos de la queja, evitando que el trabajador involucrado, ____________ sin agraviar los derechos del trabajador hasta el momento de la comprobación de los hechos.",
 
     opciones: [
       "realice actividades en las que tenga contacto con los alumnos ",

@@ -111,12 +111,15 @@ Vue.component('counter', {
             <!--
                 <p><small>Guardamos constantemente tus respuestas y tiempos. <br>Si tu conexión se ve interrumpida podrás regresar a completarla con el tiempo que tengas restante.</small></p>
             -->
+            <p class="mt-3"><small>En cualquier momento podrás guardar las respuestas que lleves y regresar posteriormente para continuar con el tiempo que te quede disponible.</small></p>
+
             <p class="mt-3"><strong>¡Éxito!</strong></p>
             <button @click="verification = true">Comenzar</button>
             </template>
             <template v-if="verification">
                 <p><strong>¿Deseas comenzar el Dominio?</strong></p>
                 <p>Tendrás <strong>{{startSeconds/60}} minutos</strong> para completarlo.</p>    
+                <p><small>En cualquier momento podrás guardar las respuestas que lleves y regresar posteriormente para continuar con el tiempo que te quede disponible.</small></p>
                 <button @click="startApp">Comenzar</button>
                 <button class="cancelar" @click="verification=false">Regresar</button>
             </template>

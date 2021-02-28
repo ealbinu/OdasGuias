@@ -590,6 +590,7 @@ input[type=number] {
 }
 .scene .pregunta {
   width: 100%;
+  background: #fff;
 }
 .scene .pregunta .label span > div {
   background: #f5f5f5;
@@ -942,5 +943,11 @@ input[type=number] {
   background: #E2F1F6;
   color: #0788AD;
   margin: 2px !important;
+}
+.saving-itm {
+  color: #EC8B2E;
+}
+.finalizar.small.savedok {
+  background: #5EB246;
 }
 /*# sourceMappingURL=assets.css.map */

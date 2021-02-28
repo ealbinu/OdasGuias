@@ -1,0 +1,28 @@
+include ../assets/pug/_head
+include ../assets/pug/_body
+include ../assets/pug/_scripts
+
+- title = 'Dominio I'
+- subtitle = ''
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+
+    body
+        #app.container.animate__animated.animate__fadeIn.animate__delay-1s.mt-5
+            h1 #{title}
+            if subtitle.length>1
+                h2 #{subtitle}
+
+            +body(3600)
+        
+            //img(v-for="(i, index) in screen" :src="i")
+
+
+        script(src="q.js")
+        +scripts
+            script.
+
+               
