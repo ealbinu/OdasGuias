@@ -10,5 +10,25 @@
     <div>ARRIBA</div>
     <iframe src="http://odasguias.ml/DIRI/" frameborder="0" style="height: 800px; width: 100%;"></iframe>
     <div>ABAJO</div>
+    <script>
+        window.addEventListener("message", (event) => {
+        console.log('¿Se detecto evento scrolltop?', event.data.scrolltop)
+        if(event.data.scrolltop){
+            
+            
+            // Este método mueve directo hasta arriba. En vez de 0, se puede colocar la altura a la que se encuentra el iframe.
+            /*
+            document.body.scrolltop = 0
+            document.documentElement.scrollTop = 0
+            */  
+
+            // Este método calcula la altura desde el iframe y se mueve, similar a un link # (hash)
+            var elem = document.getElementsByTagName("iframe")[0]
+            elem.scrollIntoView()
+
+            console.log('Moviéndose...')
+        }
+    })
+    </script>
 </body>
 </html>
