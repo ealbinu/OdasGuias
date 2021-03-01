@@ -25,8 +25,8 @@ Vue.component('finalize', {
         
     },
     template: `
-        <div class="finalize">
-            <div class="d-flex justify-content-center mt-5 flex-column text-center" v-if="!resultado">
+        <div class="finalize" id="finalize">
+            <div class="d-flex justify-content-center flex-column text-center" v-if="!resultado">
                 
                 
                 <template v-if="!saving">
@@ -47,7 +47,7 @@ Vue.component('finalize', {
                 <div class="text-center"><button class="finalizar small mt-5" @click="areyousure=false; $emit('goback')">Regresar al Dominio</button></div>
             </div>
 
-            <div class="d-flex justify-content-center mt-5 resultado" v-if="resultado">
+            <div class="d-flex justify-content-center resultado" v-if="resultado">
                 <h3>Resultado</h3>
                 <div><strong>{{right}} respuesta<span v-if="right>1 || right==0">s</span> correcta<span v-if="right>1 || right==0">s</span> </strong> de {{total}} preguntas</div>
                 <!--<button class="finalizar" @click="$emit('reset')">Volver a intentar</button>-->

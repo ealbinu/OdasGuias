@@ -56,7 +56,7 @@ var app = new Vue({
             handler(){
                 this.buildStoreCall()
                 var _this = this
-                _this.storeScreencapture()
+                //_this.storeScreencapture()
                 this.stillMissing = !_.every(this.r, function(num) { return num != undefined })
                 /*
                 setTimeout(function () {
@@ -84,7 +84,6 @@ var app = new Vue({
             }
         },
         saveAndContinueLater(){
-            console.log('Saved')
             this.buildStoreCall()
         },
         buildStoreCall () {
@@ -147,10 +146,13 @@ var app = new Vue({
             this.resultado = true
             /* screenshot */
             var _this = this
-            domtoimage.toPng(document.body).then(function (dataUrl) {
-                _this.screen.push(dataUrl)
-                _this.ended()
-            }).catch(function (error) { console.error(error) })
+            setTimeout(function () {
+                var endscreen = document.getElementById('finalize')
+                domtoimage.toPng(endscreen).then(function (dataUrl) {
+                    _this.screen.push(dataUrl)
+                    _this.ended()
+                }).catch(function (error) { console.error(error) })
+            },500)
             //this.ended()
         },
         ended () {
@@ -257,6 +259,7 @@ var app = new Vue({
             }
             var node = document.body
             var node = document.getElementById('scene_'+sceneNum)
+            
             domtoimage.toPng(node).then(function (dataUrl) {
                 _this.screen[sceneNum] = null
                 _this.screen[sceneNum] = dataUrl
