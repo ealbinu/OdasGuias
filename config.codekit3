@@ -467,13 +467,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/assets\/scroll.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/scroll.html",
-		"oF": 0
-		},
 	"\/CNAME": {
 		"cB": 0,
 		"ft": 8192,
@@ -3966,6 +3959,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MDAGUIA-assets_2021-2-28.zip",
+		"oF": 0
+		},
+	"\/scroll.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/scroll.html",
 		"oF": 0
 		}
 	},
