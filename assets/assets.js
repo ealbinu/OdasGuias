@@ -46,6 +46,7 @@ var app = new Vue({
         currentScene() {
             document.body.scrollTop = 0
             document.documentElement.scrollTop = 0
+            window.top.postMessage({scrolltop:true}, "*")
         },
         currentTime(ov, nv){
             let segundos = 60 - (nv % 60)
@@ -148,6 +149,7 @@ var app = new Vue({
             var _this = this
             setTimeout(function () {
                 var endscreen = document.getElementById('finalize')
+                var endscreen = document.body
                 domtoimage.toPng(endscreen).then(function (dataUrl) {
                     _this.screen.push(dataUrl)
                     _this.ended()

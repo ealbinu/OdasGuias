@@ -73,7 +73,7 @@ Vue.component('counter', {
     },
     template: `
     <div>
-        <div class="row counter justify-content-center align-items-center text-center">
+        <div :class="['row', 'counter', 'justify-content-center', 'align-items-center', 'text-center', (resultado)?'itended':'noended']">
             <div :class="'counterbar'" :style="'width:'+percentage+'%;'"></div>
             <div class="col-md-4 col-6 tiempores"> Tiempo restante: </div>
             <div :class="'col-md-4 col-6 ' + barstatus " v-if="!ended && percentage>0"><div class="counter__clock">{{clockview}}</div></div>
