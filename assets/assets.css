@@ -565,20 +565,21 @@ input[type=number] {
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: -8px 8px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .popper .popper__window .popper__closer {
   font-family: 'barnacle_boyregular';
   position: absolute;
-  top: 4px;
+  top: -30px;
   right: 4px;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background: var(--sec);
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 24px;
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid var(--clear);
