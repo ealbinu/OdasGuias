@@ -93,6 +93,16 @@ Vue.component('counter', {
                 </div>
                 <div class="col-4"><button>Anterior</button> <button>Siguiente</button> </div>
             </div>
+            <div class="row justify-content-center align-items-center extraconsulta">
+                <div class="col-8">
+                <p class=""><small>Da clic en el símbolo de interrogación para obtener información extra.</small></p>
+                </div>
+                <div class="popper mini col">
+                    <div class="popper__opener animate__animated animate__pulse animate__infinite animate__slower">
+                        <div class="popper__q animate__animated animate__pulse animate__infinite"></div>
+                    </div>
+                </div>
+            </div>
             <!--
             <p class="mt-3"><small>Para responder algunas de las preguntas deberás consultar una imagen o texto de referencia, podrás consultarla dando clic en la imagen que se encuentra en la esquina superior derecha.</small></p>
             -->
@@ -111,7 +121,7 @@ Vue.component('counter', {
             <!--
                 <p><small>Guardamos constantemente tus respuestas y tiempos. <br>Si tu conexión se ve interrumpida podrás regresar a completarla con el tiempo que tengas restante.</small></p>
             -->
-            <p class="mt-3"><small>En cualquier momento podrás guardar las respuestas que lleves y regresar posteriormente para continuar con el tiempo que te quede disponible.</small></p>
+            <p class=""><small>En cualquier momento podrás guardar las respuestas que lleves y regresar posteriormente para continuar con el tiempo que te quede disponible.</small></p>
 
             <p class="mt-3"><strong>¡Éxito!</strong></p>
             <button @click="verification = true">Comenzar</button>

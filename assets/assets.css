@@ -808,12 +808,22 @@ input[type=number] {
   color: #002e3a;
 }
 .counterRun .extraconsulta {
-  background: #ABD281;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  margin-top: 10px;
+  margin: 10px;
+}
+.counterRun .extraconsulta p {
+  margin-bottom: 0;
 }
 .counterRun .extraconsulta p small {
   font-size: 1.1rem;
+}
+.counterRun .extraconsulta .popper.mini .popper__opener {
+  background: none;
+  height: 50px;
+}
+.counterRun .extraconsulta .popper.mini .popper__q {
+  background-size: 30%;
 }
 .counterRun button {
   border: none;
