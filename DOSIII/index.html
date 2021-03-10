@@ -21,7 +21,13 @@
       <!-- SCENES ############################################-->
       <div class="scene" v-for="(i, index) in scenes" v-show="index &gt;= currentScene &amp;&amp; index &lt; currentScene + 10 &amp;&amp; started" :class="'scene_'+index">
         <div class="row mt-3 pregunta" :id="'scene_'+index">
-          <choose @choosed="storeScreencapture(index)" :key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+(i.texto?i.texto:'')" :options="i.opciones" :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings"></choose>
+          <choose @choosed="storeScreencapture(index)" :key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+(i.texto?i.texto:'')" :options="i.opciones" :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings">
+            <template>
+              <poppermini>
+                <div v-html="linkery(helptexts[index])"></div>
+              </poppermini>
+            </template>
+          </choose>
         </div>
       </div>
       <!-- SCENES FINALIZAR ############################################-->
@@ -47,6 +53,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/3.14.2/Autolinker.min.js"></script>
     <script src="../assets/modulos/dragdropMod.js"></script>
     <script src="../assets/modulos/dropdowns.js"></script>
     <script src="../assets/modulos/selectable.js"></script>
@@ -55,6 +62,7 @@
     <script src="../assets/modulos/inputbox.js"></script>
     <script src="../assets/modulos/choose.js"></script>
     <script src="../assets/modulos/popper.js"></script>
+    <script src="../assets/modulos/poppermini.js"></script>
     <script src="../assets/modulos/relational.js"></script>
     <script src="../assets/modulos/finalize.js?v=7"></script>
     <script src="../assets/modulos/counter.js?v=7"></script>

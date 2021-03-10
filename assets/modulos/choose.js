@@ -107,7 +107,11 @@ Vue.component('choose', {
     template: `
         <div class="choose" :class="setclass + customclass" :id="customid">
             <div class="result" v-if="evaluate" :class="setclass + ' animate__animated animate__heartBeat'"></div>
-            <div class="label"><strong v-if="num">{{num}}</strong> <span v-html="text"></span></div>
+            <div class="label">
+                <strong v-if="num">{{num}}</strong> <span v-html="text"></span>
+                <slot></slot>
+
+            </div>
             <div class="options">
                 <template v-if="multiple==false">
                     <template v-for="(op, index) in options" v-if="multiple==false">  

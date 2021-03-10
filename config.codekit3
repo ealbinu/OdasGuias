@@ -76,6 +76,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/aimg\/q.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/aimg\/q.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/aimg\/relational.png": {
 		"ft": 32768,
 		"iS": 9983,
@@ -396,6 +406,16 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/assets\/modulos\/popper-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/modulos\/poppermini.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/poppermini-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

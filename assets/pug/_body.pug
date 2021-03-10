@@ -11,6 +11,8 @@ mixin body(segundos)
         
         .row.mt-3.pregunta(:id="'scene_'+index")
             choose(@choosed="storeScreencapture(index)" :key="index" v-model="r[index]" :ref="refCount()" @isright="right++; i.res=true" @iswrong="i.res=false" :num="(index+1)+'.'" :text="i.pregunta+(i.texto?i.texto:'')" :options="i.opciones"  :answer="i.respuestaNum" :isactive="currentScene == index" :settings="i.settings")
+                template
+                    poppermini: div(v-html="linkery(helptexts[index])")
 
             if block
                 block

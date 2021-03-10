@@ -462,12 +462,38 @@ input[type=number] {
 			max-width: 100%;
 		}
     }
+    &.mini {
+        .popper__opener{
+            width: 60px; height: 60px;
+            box-shadow: none;
+            border: none;
+            .popper_incontainer{
+                display: none;
+            }
+        }
+        a{
+            background:#fff;
+            padding: 0 2px;
+            border-radius: 4px;
+            color: @main;
+        }
+    }
+
     .popper__hand{
         position: absolute;
         left: 0; top: 0;
         width: 100%; height: 100%;
         background: url(../assets/aimg/handclick.svg);
         background-size: 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }    
+    .popper__q{
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: url(../assets/aimg/q.svg);
+        background-size: 60%;
         background-repeat: no-repeat;
         background-position: center;
     }    
@@ -507,6 +533,20 @@ input[type=number] {
         }
         img{max-height: 600px; max-width: 100%;}
 	}
+    &.mini{
+        .popper__window{
+            background: fade(#777, 40%);
+            .container{
+                background: @clear;
+                max-width: 680px;
+                font-size: 1.2rem;
+                @media (max-width: 680px){
+                    font-size: 0.8rem;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
 }
 
 

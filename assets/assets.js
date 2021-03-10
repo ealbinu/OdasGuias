@@ -24,6 +24,7 @@ var app = new Vue({
             automaticSeconds: 3600,
             temps: {},
             unanswered:0,
+            helptexts: [],
             finalData:{
                 score: 100,
                 scoresum: 0,
@@ -267,6 +268,9 @@ var app = new Vue({
                 _this.screen[sceneNum] = dataUrl
             }).catch(function (error) { console.error(error) })
             
+        },
+        linkery ( txt ){
+            return Autolinker.link(txt)
         }
     },
     mounted () {
@@ -274,6 +278,9 @@ var app = new Vue({
         /* Screen capture */
         this.loadScreencap()
         this.scenesby10 = Math.floor(this.scenes.length/10)
+
+
+        
 
     },
     created () {
@@ -283,6 +290,13 @@ var app = new Vue({
         }
 
         this.scenesby10 = Math.floor(this.scenes.length/10)
+
+        if(help){
+            for (h in help) {
+                this.helptexts.push(help[h])
+            }
+        }
+
     }
 })
 

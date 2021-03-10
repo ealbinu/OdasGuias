@@ -510,6 +510,21 @@ input[type=number] {
 .popper .popper__opener img {
   max-width: 100%;
 }
+.popper.mini .popper__opener {
+  width: 60px;
+  height: 60px;
+  box-shadow: none;
+  border: none;
+}
+.popper.mini .popper__opener .popper_incontainer {
+  display: none;
+}
+.popper.mini a {
+  background: #fff;
+  padding: 0 2px;
+  border-radius: 4px;
+  color: #0089AD;
+}
 .popper .popper__hand {
   position: absolute;
   left: 0;
@@ -518,6 +533,17 @@ input[type=number] {
   height: 100%;
   background: url(../assets/aimg/handclick.svg);
   background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popper .popper__q {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/aimg/q.svg);
+  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -561,6 +587,20 @@ input[type=number] {
 .popper .popper__window img {
   max-height: 600px;
   max-width: 100%;
+}
+.popper.mini .popper__window {
+  background: rgba(119, 119, 119, 0.4);
+}
+.popper.mini .popper__window .container {
+  background: #E2F2F6;
+  max-width: 680px;
+  font-size: 1.2rem;
+}
+@media (max-width: 680px) {
+  .popper.mini .popper__window .container {
+    font-size: 0.8rem;
+    max-width: 90%;
+  }
 }
 .options div {
   margin: 10px;
