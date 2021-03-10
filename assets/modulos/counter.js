@@ -95,7 +95,7 @@ Vue.component('counter', {
             </div>
             <div class="row justify-content-center align-items-center extraconsulta">
                 <div class="col-8">
-                <p class=""><small>Da clic en el símbolo de interrogación para obtener información extra.</small></p>
+                <p class=""><small>Da clic en el símbolo de interrogación para obtener información adicional.</small></p>
                 </div>
                 <div class="popper mini col">
                     <div class="popper__opener animate__animated animate__pulse animate__infinite animate__slower">
