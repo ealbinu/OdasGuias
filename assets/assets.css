@@ -567,6 +567,11 @@ input[type=number] {
   box-shadow: -8px 8px 0px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+.popper .popper__window .container div {
+  font-size: 1.1rem;
+  max-height: 480px;
+  overflow-y: auto;
+}
 .popper .popper__window .popper__closer {
   font-family: 'barnacle_boyregular';
   position: absolute;
