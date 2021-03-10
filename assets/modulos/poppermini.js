@@ -23,7 +23,7 @@ Vue.component('poppermini', {
             </div>
             <div class="popper__window" v-if="opened">
             <div class="container">
-                <div class="popper__closer animate__animated animate__fadeInRight animate__delay-1s" @click="opened=false">x</div>
+                <div class="popper__closer animate__animated animate__fadeInRight" @click="opened=false">x</div>
                     <slot></slot>
                 </div>
             </div>
